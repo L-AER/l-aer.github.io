@@ -1,56 +1,125 @@
 @import url('https://fonts.googleapis.com/css2?family=Karla:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&family=Manrope:wght@300;400;500;600;700&display=swap');
 
-#hero {
-    height: 100vh; /* Ocupa toda la pantalla */
-    width: 100%;
-    display: flex;
-    justify-content: center; /* Centra horizontal */
-    align-items: center;     /* Centra vertical */
-    
-    /* IMAGEN DE FONDO */
-    background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.7)), 
-                url('assets/hero-foto.jpg'); 
-    background-size: cover;
-    background-position: center;
-    background-attachment: fixed; /* Efecto Parallax pro */
+body {
+    background: #fff9ed;
+    color: #212426;
 }
 
-.hero-content {
+nav {
+  background: #323062;
+  color: #f2f2f2;
+  font-family: 'Karla', sans-serif;;
+
+}
+
+.bd-placeholder-img {
+  font-size: 1.125rem;
+  text-anchor: middle;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  user-select: none;
+}
+
+@media (min-width: 768px) {
+  .bd-placeholder-img-lg {
+    font-size: 3.5rem;
+  }
+}
+
+.contador{
+  background-color: #323062;
+  text-align: center;
+}
+
+.employees,.customer,.design,.order{
+    margin-top: 5vh;
+    margin-bottom: 5vh;
+}
+.counter-count{
+    font-size: 18px;
+    background-color: #e9d9e1;
+    border-radius: 50%;
+    position: relative;
+    color: #323062;
     text-align: center;
-    color: white;
-}
-
-.hero-tagline {
-    text-transform: uppercase;
-    letter-spacing: 4px;
-    font-size: 0.9rem;
-    margin-bottom: 10px;
-    opacity: 0.8;
-}
-
-.hero-title {
-    font-size: clamp(4rem, 15vw, 10rem); /* Se ajusta sola al tamaño de pantalla */
-    line-height: 0.9;
-    margin-bottom: 30px;
-    font-weight: 900;
-}
-
-/* EL BOTÓN */
-.btn-primary {
+    line-height: 92px;
+    width: 92px;
+    height: 92px;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -o-border-radius: 50%;
     display: inline-block;
-    padding: 15px 35px;
-    border: 2px solid #fff;
-    color: #fff;
-    text-decoration: none;
-    text-transform: uppercase;
-    font-weight: bold;
-    letter-spacing: 2px;
-    transition: all 0.3s ease;
 }
 
-.btn-primary:hover {
-    background-color: #fff;
-    color: #000;
+.employee-p,.customer-p,.order-p,.design-p{
+    font-size: 24px;
+    color: #fff;
+    line-height: 34px;
+}
+
+.datos-curiosos{
+  background: #e9d9e1;
+  padding: 4vh;
+  color: #323062
+}
+
+
+.noticias{
+  background: #f8e9e5;
+}
+
+.proximamente{
+  padding: 4vh;
+      color: #323062;
+}
+
+footer {
+  background: #323062;
+  color:#fff9ed ;
+  padding: 10vh;
+}
+
+.why{
+  background: #b5b9ce;
+  color:#323062 ;
+  padding: 4vh;
+}
+
+
+h1, h2, h3, h4, h5, h6 {
+    font-weight: 600;
+    font-family: 'Manrope', sans-serif;
+}
+
+p {
+  font-family: 'Karla', sans-serif;
+
+}
+
+a {
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: none;
+    color: #f2f2f2;
+}
+
+
+/*NOTICIAS*/
+.body-news{
+  background: #f0f0ec;
+  
+}
+.header-news{
+  background: #d199c6;
+  color: #fff9ed;
+  background-image: url(img/header-noticias.png)
+}
+
+.blog-post{
+color: #323062;
 }
 
 .link-footer a{
@@ -65,4 +134,45 @@
 
 .link-footer  a:hover {
   color: black;
+}
+.contenedor{
+  width: 100%;
+  padding: 10px 40px;
+}
+.swiper-container{
+  width: 120rem;
+height: auto;
+}
+.contenedor .swiper-slide {
+  position: relative;
+  text-align: center;
+  font-size: 18px;
+  background: #fff;
+  border-radius: 15px;
+  text-align: start;
+  box-shadow: 0px 4px 4px rgba(196, 196, 196, 0.25);
+ 
+}
+.contenedor .swiper-slide img{
+   display: block;
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+
+}
+.contenedor .swiper-slide .card-description{
+    padding:1rem 1rem;
+}
+.contenedor .swiper-slide .card-title,.container .swiper-slide .card-text{
+   margin-bottom: .5rem;
+}
+.contenedor .swiper-slide .card-link{
+   text-align: center;
+}
+
+.contenedor .swiper-slide .card-link a{
+    text-decoration: none;
+    color: #1d6ce2;
 }
