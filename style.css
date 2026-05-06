@@ -78,6 +78,29 @@ h2 { font-family: 'Manrope', sans-serif; font-size: 2.5rem; margin-bottom: 2.5re
     text-transform: uppercase; letter-spacing: 2px;
 }
 
+/* Forzar diseño de 2 columnas y fondo oscuro */
+.sounds-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 30px;
+}
+
+.soundcloud-card {
+    background: #111 !important; /* Gris oscuro profundo */
+    border: 1px solid #222 !important;
+}
+
+.music-container iframe {
+    filter: invert(0.9) hue-rotate(180deg) brightness(0.8); /* Truco Pro: Invierte el reproductor para que sea oscuro */
+    border-radius: 8px;
+}
+
+@media (max-width: 992px) {
+    .sounds-grid {
+        grid-template-columns: 1fr !important;
+    }
+}
+
 /* CONTENEDORES ESPECÍFICOS */
 .video-container { border-radius: 10px; overflow: hidden; position: relative; padding-bottom: 56.25%; height: 0; }
 .video-container iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }
