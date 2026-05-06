@@ -1,178 +1,124 @@
-@import url('https://fonts.googleapis.com/css2?family=Karla:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&family=Manrope:wght@300;400;500;600;700&display=swap');
+/* 1. FUENTES */
+@import url('https://fonts.googleapis.com/css2?family=Karla:ital,wght@0,300;0,400;0,700;1,400&family=Manrope:wght@300;500;800&display=swap');
+
+/* 2. VARIABLES DE COLOR (Paleta DJ) */
+:root {
+    --bg-color: #0a0a0a;      /* Negro profundo */
+    --card-bg: #161616;      /* Gris para tarjetas */
+    --accent: #ffffff;       /* Blanco puro para acentos */
+    --text-main: #f0f0f0;    /* Blanco suave para lectura */
+    --text-dim: #888888;     /* Gris para textos secundarios */
+}
+
+/* 3. RESET Y BASE */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 
 body {
-    background: #000000;
-    color: #ffffff;
+    background-color: var(--bg-color);
+    color: var(--text-main);
+    font-family: 'Karla', sans-serif;
+    line-height: 1.6;
+    overflow-x: hidden;
 }
 
-nav {
-  background: #000000;
-  color: #ffffff;
-  font-family: 'Karla', sans-serif;;
-
-}
-
-.bd-placeholder-img {
-  font-size: 1.125rem;
-  text-anchor: middle;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  user-select: none;
-}
-
-@media (min-width: 768px) {
-  .bd-placeholder-img-lg {
-    font-size: 3.5rem;
-  }
-}
-
-.contador{
-  background-color: #323062;
-  text-align: center;
-}
-
-.employees,.customer,.design,.order{
-    margin-top: 5vh;
-    margin-bottom: 5vh;
-}
-.counter-count{
-    font-size: 18px;
-    background-color: #e9d9e1;
-    border-radius: 50%;
-    position: relative;
-    color: #323062;
-    text-align: center;
-    line-height: 92px;
-    width: 92px;
-    height: 92px;
-    -webkit-border-radius: 50%;
-    -moz-border-radius: 50%;
-    -ms-border-radius: 50%;
-    -o-border-radius: 50%;
-    display: inline-block;
-}
-
-.employee-p,.customer-p,.order-p,.design-p{
-    font-size: 24px;
-    color: #fff;
-    line-height: 34px;
-}
-
-.datos-curiosos{
-  background: #e9d9e1;
-  padding: 4vh;
-  color: #323062
-}
-
-
-.noticias{
-  background: #f8e9e5;
-}
-
-.proximamente{
-  padding: 4vh;
-      color: #323062;
-}
-
-footer {
-  background: #323062;
-  color:#fff9ed ;
-  padding: 10vh;
-}
-
-.why{
-  background: #b5b9ce;
-  color:#323062 ;
-  padding: 4vh;
-}
-
-
-h1, h2, h3, h4, h5, h6 {
-    font-weight: 600;
+/* 4. TIPOGRAFÍA */
+h1, h2, h3 {
     font-family: 'Manrope', sans-serif;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: -1px;
 }
 
-p {
-  font-family: 'Karla', sans-serif;
+h1 { font-size: clamp(3rem, 10vw, 8rem); line-height: 0.9; }
+h2 { font-size: 2.5rem; margin-bottom: 2rem; border-left: 4px solid var(--accent); padding-left: 15px; }
 
-}
+p { font-size: 1.1rem; color: var(--text-dim); }
 
-a {
-    text-decoration: none;
-}
-
-a:hover {
-    text-decoration: none;
-    color: #f2f2f2;
-}
-
-
-/*NOTICIAS*/
-.body-news{
-  background: #f0f0ec;
-  
-}
-.header-news{
-  background: #d199c6;
-  color: #fff9ed;
-  background-image: url(img/header-noticias.png)
-}
-
-.blog-post{
-color: #323062;
-}
-
-.link-footer a{
-  color: #0b3f3c;
-  text-align: center;
-  margin-left: 1px;
-  margin-right: 1px;
-  margin-top:none;
-  padding: 10px;
-  background-color:#FDE4DE;
-}
-
-.link-footer  a:hover {
-  color: black;
-}
-.contenedor{
-  width: 100%;
-  padding: 10px 40px;
-}
-.swiper-container{
-  width: 120rem;
-height: auto;
-}
-.contenedor .swiper-slide {
-  position: relative;
-  text-align: center;
-  font-size: 18px;
-  background: #fff;
-  border-radius: 15px;
-  text-align: start;
-  box-shadow: 0px 4px 4px rgba(196, 196, 196, 0.25);
- 
-}
-.contenedor .swiper-slide img{
-   display: block;
+/* 5. NAVEGACIÓN (Sticky) */
+nav {
+    position: fixed;
+    top: 0;
     width: 100%;
-    height: 220px;
+    z-index: 1000;
+    padding: 20px 40px;
+    background: rgba(10, 10, 10, 0.8);
+    backdrop-filter: blur(10px);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-family: 'Manrope', sans-serif;
+    font-weight: 800;
+    font-size: 1.5rem;
+    color: var(--accent);
+}
+
+/* 6. GRID DE FOTOS (Swiper / Gallery) */
+.contenedor {
+    padding: 100px 40px;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.swiper-slide {
+    background: var(--card-bg);
+    border-radius: 4px; /* Menos redondeado = más tech */
+    overflow: hidden;
+    transition: transform 0.3s ease;
+    border: 1px solid #222;
+}
+
+.swiper-slide:hover {
+    transform: translateY(-10px);
+    border-color: var(--accent);
+}
+
+.swiper-slide img {
+    width: 100%;
+    height: 300px;
     object-fit: cover;
-    border-top-left-radius: 15px;
-    border-top-right-radius: 15px;
-
-}
-.contenedor .swiper-slide .card-description{
-    padding:1rem 1rem;
-}
-.contenedor .swiper-slide .card-title,.container .swiper-slide .card-text{
-   margin-bottom: .5rem;
-}
-.contenedor .swiper-slide .card-link{
-   text-align: center;
+    filter: grayscale(100%);
+    transition: 0.5s;
 }
 
-.contenedor .swiper-slide .card-link a{
-    text-decoration: none;
-    color: #1d6ce2;
+.swiper-slide:hover img {
+    filter: grayscale(0%);
 }
+
+.card-description {
+    padding: 20px;
+}
+
+/* 7. FOOTER & LINKS */
+footer {
+    background: #000;
+    padding: 80px 40px;
+    text-align: center;
+    border-top: 1px solid #222;
+}
+
+.link-footer a {
+    color: var(--bg-color);
+    background: var(--accent);
+    padding: 12px 30px;
+    font-weight: 700;
+    text-transform: uppercase;
+    font-size: 0.8rem;
+    margin: 10px;
+    display: inline-block;
+    transition: 0.3s;
+}
+
+.link-footer a:hover {
+    background: #ccc;
+    transform: scale(1.05);
+}
+
+/* 8. UTILIDADES */
+.spacer { height: 100px; }
