@@ -205,3 +205,29 @@ h2 {
     height: 0;
     overflow: hidden;
     background: #111; /*
+
+    /* Estilos necesarios para que la Galería se vea bien */
+.swiper-container {
+    width: 100%;
+    padding-bottom: 50px; /* Espacio para los puntitos de paginación */
+}
+
+.swiper-slide {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    height: 450px; /* Ajusta la altura a tu gusto */
+}
+
+.swiper-slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Esto evita que la foto se estire feo */
+    border-radius: 5px;
+}
+
+/* Color de los puntitos de navegación */
+.swiper-pagination-bullet {
+    background: var(--accent) !important;
+}
