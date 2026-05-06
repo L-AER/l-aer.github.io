@@ -50,3 +50,17 @@
     background-color: #fff;
     color: #000;
 }
+
+.link-footer a{
+  color: #0b3f3c;
+  text-align: center;
+  margin-left: 1px;
+  margin-right: 1px;
+  margin-top:none;
+  padding: 10px;
+  background-color:#FDE4DE;
+}
+
+.link-footer  a:hover {
+  color: black;
+}
