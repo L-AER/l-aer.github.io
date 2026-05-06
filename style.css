@@ -151,15 +151,6 @@ h2 {
     border: 1px solid #222;
 }
 
-.track-info {
-    font-family: 'Manrope', sans-serif;
-    font-size: 0.7rem;
-    text-transform: uppercase;
-    letter-spacing: 2px;
-    color: var(--text-dim);
-    margin-bottom: 1px;
-    margin-left: 5px;
-}
 
 /* VIDEOS */
 
@@ -186,15 +177,19 @@ h2 {
 }
 
 .video-item .track-info {
+    font-family: 'Manrope', sans-serif;
     font-size: 0.75rem;
     color: var(--text-dim);
     margin-bottom: 10px;
     text-transform: uppercase;
-    letter-spacing: 1px;
+    letter-spacing: 2px;
     /* Evita que títulos largos rompan la grilla */
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
+    margin-left: 5px;
+}
+
 }
 
 /* El truco del Responsive Video */
