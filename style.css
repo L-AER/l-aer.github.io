@@ -185,8 +185,16 @@ h2 {
     }
 }
 
-.video-item {
-    margin-bottom: 20px;
+.video-item .track-info {
+    font-size: 0.75rem;
+    color: var(--text-dim);
+    margin-bottom: 10px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    /* Evita que títulos largos rompan la grilla */
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
 /* El truco del Responsive Video */
