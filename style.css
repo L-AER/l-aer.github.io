@@ -47,6 +47,29 @@ nav {
     letter-spacing: 2px;
 }
 
+.hero-logo-container {
+    margin: 20px 0 40px; /* Separa el logo del texto de arriba y del botón */
+    display: flex;
+    justify-content: center;
+}
+
+.hero-logo {
+    width: 100%;
+    max-width: 600px; /* Ajusta este número para que se vea del tamaño que quieras */
+    height: auto;
+    display: block;
+    /* Esto ayuda a que se vea nítido */
+    image-rendering: -webkit-optimize-contrast;
+}
+
+/* Para que en celulares no se salga de la pantalla */
+@media (max-width: 768px) {
+    .hero-logo {
+        max-width: 80%;
+    }
+}
+
+
 .nav-links a {
     color: var(--text-main);
     text-decoration: none;
