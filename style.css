@@ -1,8 +1,18 @@
-header {
-    position: fixed;
-    top: 0;
-    width: 100%;
-    z-index: 1000; /* Para que siempre esté por encima de las fotos */
-    background: rgba(0,0,0,0.8); /* Negro con transparencia (muy DJ) */
-    backdrop-filter: blur(10px); /* Efecto vidrio esmerilado */
+#hero {
+    height: 100vh; /* Ocupa el 100% del alto de la pantalla */
+    background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('assets/hero-bg.jpg');
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+#hero h1 {
+    font-size: clamp(3rem, 10vw, 8rem); /* Tipografía que escala sola */
+    font-weight: 900;
+    text-transform: uppercase;
+    margin-bottom: 10px;
 }
