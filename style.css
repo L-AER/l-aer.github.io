@@ -153,7 +153,6 @@ h2 {
 
 
 /* VIDEOS */
-
 /* Estructura de la Grilla de Videos */
 .video-grid {
     display: grid;
@@ -189,7 +188,6 @@ h2 {
     text-overflow: ellipsis;
     margin-left: 5px;
 }
-
 }
 
 /* El truco del Responsive Video */
@@ -210,6 +208,18 @@ h2 {
     border: 0;
 }
 
+/* Este va después del que ya tienes de .video-container iframe */
+.video-container iframe {
+    filter: grayscale(100%);
+    transition: all 0.5s ease;
+    opacity: 0.7;
+}
+
+.video-item:hover .video-container iframe {
+    filter: grayscale(0%);
+    opacity: 1;
+    transform: scale(1.02);
+}
 
 /* 5. GALERÍA (SWIPER) */
 .swiper-slide img {
