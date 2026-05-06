@@ -146,6 +146,33 @@ h2 {
     filter: grayscale(0%);
 }
 
+/* Grilla de Spotify */
+.spotify-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+    margin-top: 20px;
+}
+
+.spotify-item {
+    background: rgba(255, 255, 255, 0.03); /* Un fondo sutilísimo */
+    padding: 15px;
+    border-radius: 15px;
+    border: 1px solid #1a1a1a;
+    transition: 0.3s;
+}
+
+.spotify-item:hover {
+    border-color: #1DB954; /* El verde característico de Spotify solo al pasar el mouse */
+    transform: translateY(-5px);
+}
+
+@media (max-width: 768px) {
+    .spotify-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
 /* MÚSICA Y TÍTULOS DE TRACKS */
 .music-container {
     margin-top: 20px;
