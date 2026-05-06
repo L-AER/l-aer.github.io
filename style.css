@@ -16,7 +16,7 @@
 }
 
 html {
-    scroll-behavior: smooth; /* Para que al hacer clic en el menú baje suavemente */
+    scroll-behavior: smooth;
 }
 
 body {
@@ -68,10 +68,11 @@ nav {
     display: flex;
     justify-content: center;
     align-items: center;
-    background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.8)), url('img/1.jpg'); /* Usa tu foto principal */
+    background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.8)), url('img/1.jpg');
     background-size: cover;
     background-position: center;
     text-align: center;
+    overflow: hidden; /* Escudo para evitar que elementos se escapen al hero */
 }
 
 .hero-tagline {
@@ -117,12 +118,11 @@ h2 {
     text-transform: uppercase;
 }
 
-/* FLEXBOX PARA BIO (Texto e Imagen) */
 .row-flex {
     display: flex;
     align-items: center;
     gap: 50px;
-    flex-wrap: wrap; /* Esto lo hace responsive automáticamente */
+    flex-wrap: wrap;
 }
 
 .col-text, .col-img {
@@ -141,7 +141,6 @@ h2 {
     filter: grayscale(0%);
 }
 
-/* SECCIÓN MÚSICA */
 .section-dark {
     background-color: #000;
 }
@@ -151,52 +150,40 @@ h2 {
     border: 1px solid #222;
 }
 
-
-/* VIDEOS */
-/* Estructura de la Grilla de Videos */
-.video-grid {
-    display: grid;
-    /* Forzamos 3 columnas iguales en pantallas grandes */
-    grid-template-columns: repeat(3, 1fr); 
-    gap: 20px; /* Espacio entre los videos */
-    margin-top: 30px;
-}
-
-/* Para que en celulares no se vea minúsculo, volvemos a 1 columna */
-@media (max-width: 992px) {
-    .video-grid {
-        grid-template-columns: repeat(2, 1fr); /* 2 columnas en tablets */
-    }
-}
-
-@media (max-width: 600px) {
-    .video-grid {
-        grid-template-columns: 1fr; /* 1 columna en móviles */
-    }
-}
-
-.video-item .track-info {
+.track-info {
     font-family: 'Manrope', sans-serif;
     font-size: 0.75rem;
     color: var(--text-dim);
     margin-bottom: 10px;
     text-transform: uppercase;
     letter-spacing: 2px;
-    /* Evita que títulos largos rompan la grilla */
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
     margin-left: 5px;
 }
+
+/* VIDEOS SECTION */
+.video-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); 
+    gap: 20px;
+    margin-top: 30px;
 }
 
-/* El truco del Responsive Video */
+@media (max-width: 992px) {
+    .video-grid { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (max-width: 600px) {
+    .video-grid { grid-template-columns: 1fr; }
+}
+
+/* El truco del Responsive Video CORREGIDO */
 .video-container {
     position: relative;
-    padding-bottom: 56.25%; /* Relación de aspecto 16:9 */
+    padding-bottom: 56.25%;
     height: 0;
     overflow: hidden;
     background: #000;
+    border: 1px solid #1a1a1a;
 }
 
 .video-container iframe {
@@ -206,10 +193,6 @@ h2 {
     width: 100%;
     height: 100%;
     border: 0;
-}
-
-/* Este va después del que ya tienes de .video-container iframe */
-.video-container iframe {
     filter: grayscale(100%);
     transition: all 0.5s ease;
     opacity: 0.7;
@@ -260,21 +243,10 @@ footer {
     color: var(--text-dim);
 }
 
-/* 7. RESPONSIVE (Móviles) */
+/* 7. RESPONSIVE MÓVIL GENERAL */
 @media (max-width: 768px) {
-    nav {
-        padding: 15px 20px;
-    }
-    
-    .nav-links {
-        display: none; /* Oculta el menú en móvil por simplicidad ahora */
-    }
-    
-    .contenedor {
-        padding: 50px 20px;
-    }
-    
-    h2 {
-        font-size: 1.8rem;
-    }
+    nav { padding: 15px 20px; }
+    .nav-links { display: none; }
+    .contenedor { padding: 50px 20px; }
+    h2 { font-size: 1.8rem; }
 }
