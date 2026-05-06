@@ -1,124 +1,210 @@
-/* 1. FUENTES */
-@import url('https://fonts.googleapis.com/css2?family=Karla:ital,wght@0,300;0,400;0,700;1,400&family=Manrope:wght@300;500;800&display=swap');
+/* 1. CONFIGURACIÓN Y FUENTES */
+@import url('https://fonts.googleapis.com/css2?family=Karla:wght@400;700&family=Manrope:wght@300;500;800&display=swap');
 
-/* 2. VARIABLES DE COLOR (Paleta DJ) */
 :root {
-    --bg-color: #0a0a0a;      /* Negro profundo */
-    --card-bg: #161616;      /* Gris para tarjetas */
-    --accent: #ffffff;       /* Blanco puro para acentos */
-    --text-main: #f0f0f0;    /* Blanco suave para lectura */
-    --text-dim: #888888;     /* Gris para textos secundarios */
+    --bg-dark: #0a0a0a;
+    --accent: #ffffff;
+    --text-main: #f5f5f5;
+    --text-dim: #999999;
+    --spacing: 80px;
 }
 
-/* 3. RESET Y BASE */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
+html {
+    scroll-behavior: smooth; /* Para que al hacer clic en el menú baje suavemente */
+}
+
 body {
-    background-color: var(--bg-color);
+    background-color: var(--bg-dark);
     color: var(--text-main);
     font-family: 'Karla', sans-serif;
     line-height: 1.6;
-    overflow-x: hidden;
 }
 
-/* 4. TIPOGRAFÍA */
-h1, h2, h3 {
-    font-family: 'Manrope', sans-serif;
-    font-weight: 800;
-    text-transform: uppercase;
-    letter-spacing: -1px;
-}
-
-h1 { font-size: clamp(3rem, 10vw, 8rem); line-height: 0.9; }
-h2 { font-size: 2.5rem; margin-bottom: 2rem; border-left: 4px solid var(--accent); padding-left: 15px; }
-
-p { font-size: 1.1rem; color: var(--text-dim); }
-
-/* 5. NAVEGACIÓN (Sticky) */
+/* 2. NAVEGACIÓN */
 nav {
     position: fixed;
     top: 0;
     width: 100%;
-    z-index: 1000;
-    padding: 20px 40px;
-    background: rgba(10, 10, 10, 0.8);
-    backdrop-filter: blur(10px);
     display: flex;
     justify-content: space-between;
     align-items: center;
+    padding: 20px 5%;
+    background: rgba(10, 10, 10, 0.85);
+    backdrop-filter: blur(10px);
+    z-index: 2000;
 }
 
 .logo {
     font-family: 'Manrope', sans-serif;
     font-weight: 800;
     font-size: 1.5rem;
-    color: var(--accent);
+    letter-spacing: 2px;
 }
 
-/* 6. GRID DE FOTOS (Swiper / Gallery) */
+.nav-links a {
+    color: var(--text-main);
+    text-decoration: none;
+    margin-left: 25px;
+    font-size: 0.8rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    transition: 0.3s;
+}
+
+.nav-links a:hover {
+    color: var(--text-dim);
+}
+
+/* 3. HERO SECTION */
+#hero {
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.8)), url('img/1.jpg'); /* Usa tu foto principal */
+    background-size: cover;
+    background-position: center;
+    text-align: center;
+}
+
+.hero-tagline {
+    text-transform: uppercase;
+    letter-spacing: 5px;
+    font-size: 0.9rem;
+    color: var(--text-dim);
+}
+
+.hero-title {
+    font-family: 'Manrope', sans-serif;
+    font-size: clamp(3.5rem, 12vw, 9rem);
+    font-weight: 800;
+    margin: 10px 0 30px;
+}
+
+.btn-primary {
+    padding: 15px 40px;
+    border: 1px solid var(--accent);
+    color: var(--accent);
+    text-decoration: none;
+    font-weight: 700;
+    text-transform: uppercase;
+    transition: 0.4s;
+}
+
+.btn-primary:hover {
+    background: var(--accent);
+    color: var(--bg-dark);
+}
+
+/* 4. SECCIONES Y CONTENEDORES */
 .contenedor {
-    padding: 100px 40px;
+    padding: var(--spacing) 10%;
     max-width: 1400px;
     margin: 0 auto;
 }
 
-.swiper-slide {
-    background: var(--card-bg);
-    border-radius: 4px; /* Menos redondeado = más tech */
-    overflow: hidden;
-    transition: transform 0.3s ease;
-    border: 1px solid #222;
+h2 {
+    font-family: 'Manrope', sans-serif;
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+    text-transform: uppercase;
 }
 
-.swiper-slide:hover {
-    transform: translateY(-10px);
-    border-color: var(--accent);
+/* FLEXBOX PARA BIO (Texto e Imagen) */
+.row-flex {
+    display: flex;
+    align-items: center;
+    gap: 50px;
+    flex-wrap: wrap; /* Esto lo hace responsive automáticamente */
 }
 
-.swiper-slide img {
+.col-text, .col-img {
+    flex: 1;
+    min-width: 300px;
+}
+
+.img-responsive {
     width: 100%;
-    height: 300px;
-    object-fit: cover;
+    height: auto;
     filter: grayscale(100%);
     transition: 0.5s;
 }
 
-.swiper-slide:hover img {
+.img-responsive:hover {
     filter: grayscale(0%);
 }
 
-.card-description {
-    padding: 20px;
+/* SECCIÓN MÚSICA */
+.section-dark {
+    background-color: #000;
 }
 
-/* 7. FOOTER & LINKS */
+.music-container {
+    margin-top: 30px;
+    border: 1px solid #222;
+}
+
+/* 5. GALERÍA (SWIPER) */
+.swiper-slide img {
+    width: 100%;
+    height: 400px;
+    object-fit: cover;
+    border-radius: 2px;
+}
+
+.swiper-pagination-bullet {
+    background: var(--accent);
+}
+
+/* 6. FOOTER */
 footer {
-    background: #000;
-    padding: 80px 40px;
+    padding: 60px 10%;
+    border-top: 1px solid #1a1a1a;
     text-align: center;
-    border-top: 1px solid #222;
+}
+
+.link-footer {
+    margin-bottom: 30px;
 }
 
 .link-footer a {
-    color: var(--bg-color);
+    color: var(--bg-dark);
     background: var(--accent);
-    padding: 12px 30px;
-    font-weight: 700;
-    text-transform: uppercase;
-    font-size: 0.8rem;
+    padding: 12px 25px;
     margin: 10px;
     display: inline-block;
-    transition: 0.3s;
+    font-weight: 700;
+    text-transform: uppercase;
+    font-size: 0.75rem;
 }
 
-.link-footer a:hover {
-    background: #ccc;
-    transform: scale(1.05);
+.copyright {
+    font-size: 0.8rem;
+    color: var(--text-dim);
 }
 
-/* 8. UTILIDADES */
-.spacer { height: 100px; }
+/* 7. RESPONSIVE (Móviles) */
+@media (max-width: 768px) {
+    nav {
+        padding: 15px 20px;
+    }
+    
+    .nav-links {
+        display: none; /* Oculta el menú en móvil por simplicidad ahora */
+    }
+    
+    .contenedor {
+        padding: 50px 20px;
+    }
+    
+    h2 {
+        font-size: 1.8rem;
+    }
+}
