@@ -166,8 +166,23 @@ h2 {
 /* Estructura de la Grilla de Videos */
 .video-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 30px;
+    /* Forzamos 3 columnas iguales en pantallas grandes */
+    grid-template-columns: repeat(3, 1fr); 
+    gap: 20px; /* Espacio entre los videos */
+    margin-top: 30px;
+}
+
+/* Para que en celulares no se vea minúsculo, volvemos a 1 columna */
+@media (max-width: 992px) {
+    .video-grid {
+        grid-template-columns: repeat(2, 1fr); /* 2 columnas en tablets */
+    }
+}
+
+@media (max-width: 600px) {
+    .video-grid {
+        grid-template-columns: 1fr; /* 1 columna en móviles */
+    }
 }
 
 .video-item {
