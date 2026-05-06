@@ -145,6 +145,28 @@ h2 {
 .img-responsive:hover {
     filter: grayscale(0%);
 }
+/*contenedores de musica en general*/
+
+/* Clase unificada para todos los items de media (Spotify, SoundCloud, YouTube) */
+.media-card {
+    background: rgba(255, 255, 255, 0.03); 
+    padding: 20px; /* Un poco más de aire se ve mejor */
+    border-radius: 15px;
+    border: 1px solid #1a1a1a;
+    transition: 0.3s;
+    margin-bottom: 20px; /* Para que no se peguen entre ellos */
+}
+
+.media-card:hover {
+    border-color: var(--accent); /* Cambia al blanco de tu marca al pasar el mouse */
+    transform: translateY(-5px);
+}
+
+/* Ajuste específico para que los bordes del video también se redondeen dentro del contenedor */
+.video-container {
+    border-radius: 10px;
+    overflow: hidden;
+}
 
 /* Grilla de Spotify */
 .spotify-grid {
