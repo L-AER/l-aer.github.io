@@ -87,78 +87,96 @@ nav {
 }
 /* Contenedor general bajo el párrafo de la bio */
 .bio-footer {
-    margin-top: 40px;
+    margin-top: 30px; /* Reducimos espacio para que no ocupe todo */
     display: flex;
     flex-direction: column;
-    gap: 35px; /* Espacio entre botones e info de contacto */
+    gap: 30px;
 }
 
-/* Contenedor de botones */
+/* Contenedor de botones (ahora enlaces discretos) */
 .bio-actions {
     display: flex;
     align-items: center;
-    gap: 20px;
+    gap: 25px; /* Espacio entre los dos enlaces */
     flex-wrap: wrap;
 }
 
-/* Estilo para el segundo botón (el que se veía azul) */
-.btn-secondary {
+/* Estilo unificado para ambos enlaces (Rider y Assets) */
+.btn-primary, .btn-secondary {
+    /* Reseteo total de estilos anteriores */
+    background: transparent !important;
+    border: none !important;
+    padding: 0 !important;
+    box-shadow: none !important;
+    transform: none !important;
+    
+    /* Estilo nuevo minimalista */
+    display: flex;
+    align-items: center;
+    gap: 8px; /* Espacio para el guion */
     text-decoration: none !important;
     font-family: 'Space Grotesk', sans-serif;
-    font-size: 0.7rem;
-    font-weight: 700;
-    letter-spacing: 3px;
+    font-size: 0.7rem; /* Un pelo más pequeño */
+    font-weight: 500; /* Menos grueso */
     text-transform: uppercase;
-    color: var(--text-dim) !important; /* Forzamos el gris sutil */
-    transition: 0.3s;
-    padding: 10px 0; /* Para que sea fácil de clickear */
+    letter-spacing: 2px;
+    color: var(--text-dim) !important; /* Gris sutil */
+    transition: 0.3s ease;
 }
 
-.btn-secondary:hover {
-    color: var(--accent) !important;
-    letter-spacing: 4px;
+/* Añadimos un guion técnico antes de cada enlace */
+.btn-primary::before, .btn-secondary::before {
+    content: "";
+    width: 15px;
+    height: 1px;
+    background-color: #222; /* Línea gris muy oscura */
+    display: block;
+    transition: 0.3s ease;
 }
 
-/* Bloque de texto técnico abajo */
+/* Efecto Hover para ambos */
+.btn-primary:hover, .btn-secondary:hover {
+    color: var(--accent) !important; /* Brilla en blanco o neón */
+    letter-spacing: 3px;
+}
+
+.btn-primary:hover::before, .btn-secondary:hover::before {
+    background-color: var(--accent); /* El guion también brilla */
+    width: 20px; /* Se alarga un poquito */
+}
+
+/* --- Bloque de Info técnica abajo (lo mantenemos pero más compacto) --- */
 .bio-contact-info {
     display: flex;
-    gap: 40px;
-    border-top: 1px solid #1a1a1a; /* Línea divisoria muy sutil */
-    padding-top: 25px;
+    gap: 35px;
+    border-top: 1px solid #1a1a1a;
+    padding-top: 20px;
 }
 
 .info-group {
     display: flex;
     flex-direction: column;
-    gap: 5px;
+    gap: 3px;
 }
 
 .info-label {
     font-family: 'Syne', sans-serif;
-    font-size: 0.55rem;
+    font-size: 0.5rem; /* Ultra pequeño */
     text-transform: uppercase;
     letter-spacing: 2px;
-    color: #444; /* Gris oscuro */
+    color: #444;
 }
 
 .info-value {
     font-family: 'Space Grotesk', sans-serif;
-    font-size: 0.85rem;
+    font-size: 0.8rem; /* Un poco más pequeño */
     color: var(--text-main);
     text-decoration: none;
     transition: 0.3s;
 }
 
 .info-value:hover {
-    color: var(--text-dim);
-}
-
-/* Ajuste para móvil: que todo se apile */
-@media (max-width: 768px) {
-    .bio-contact-info {
-        flex-direction: column;
-        gap: 20px;
-    }
+    color: var(--accent);
 }
 
 /* 4. SECCIONES Y GRILLAS */
