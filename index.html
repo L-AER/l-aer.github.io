@@ -121,6 +121,19 @@
         </section>
     </main>
 
+<section id="gigs" class="contenedor">
+    <h2>Past Gigs</h2>
+    <div class="swiper gigSwiper">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide"><img src="img/flyer-1.jpg" alt="Gig 1"></div>
+            <div class="swiper-slide"><img src="img/flyer-2.jpg" alt="Gig 2"></div>
+            <div class="swiper-slide"><img src="img/flyer-3.jpg" alt="Gig 3"></div>
+            <div class="swiper-slide"><img src="img/flyer-4.jpg" alt="Gig 4"></div>
+        </div>
+        <div class="swiper-pagination"></div>
+    </div>
+</section>
+
 <footer>
     <div class="footer-content">
         <div class="footer-column">
@@ -150,6 +163,24 @@
             spaceBetween: 20,
             pagination: { el: '.swiper-pagination', clickable: true },
             breakpoints: { 640: { slidesPerView: 2 }, 1024: { slidesPerView: 3 } }
+        });
+        
+        var gigSwiper = new Swiper('.gigSwiper', {
+            effect: 'coverflow',
+            grabCursor: true,
+            centeredSlides: true,
+            slidesPerView: 'auto',
+            loop: true, // Con 4 imágenes el loop funciona perfecto
+            coverflowEffect: {
+                rotate: 30, // Grados de rotación
+                stretch: 0,
+                depth: 100, // Profundidad en 3D
+                modifier: 1,
+                slideShadows: true,
+            },
+            pagination: {
+                el: '.swiper-pagination',
+            },
         });
     </script>
 </body>
