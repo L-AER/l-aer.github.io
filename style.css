@@ -85,90 +85,82 @@ nav {
 .btn-primary:active {
     transform: translateY(0); /* Efecto de click */
 }
-/* Contenedor principal */
+/* Contenedor general bajo el párrafo de la bio */
 .bio-footer {
-    margin-top: 50px;
+    margin-top: 40px;
     display: flex;
     flex-direction: column;
-    gap: 40px;
-    border-top: 1px solid #111;
-    padding-top: 30px;
+    gap: 35px; /* Espacio entre botones e info de contacto */
 }
 
-/* Fila de botones */
-.action-buttons {
+/* Contenedor de botones */
+.bio-actions {
     display: flex;
-    gap: 15px;
+    align-items: center;
+    gap: 20px;
     flex-wrap: wrap;
 }
 
-/* El botón secundario (Ghost) */
+/* Estilo para el segundo botón (el que se veía azul) */
 .btn-secondary {
-    display: inline-block;
-    padding: 16px 35px;
-    border: 1px solid rgba(255, 255, 255, 0.15);
-    color: #888;
-    text-decoration: none;
+    text-decoration: none !important;
     font-family: 'Space Grotesk', sans-serif;
-    font-weight: 700;
     font-size: 0.7rem;
-    text-transform: uppercase;
+    font-weight: 700;
     letter-spacing: 3px;
-    transition: all 0.4s ease;
+    text-transform: uppercase;
+    color: var(--text-dim) !important; /* Forzamos el gris sutil */
+    transition: 0.3s;
+    padding: 10px 0; /* Para que sea fácil de clickear */
 }
 
 .btn-secondary:hover {
-    border-color: #fff;
-    color: #fff;
-    background: rgba(255, 255, 255, 0.05);
+    color: var(--accent) !important;
+    letter-spacing: 4px;
 }
 
-/* Bloque de contacto tipo "Ficha" */
-.quick-contact {
+/* Bloque de texto técnico abajo */
+.bio-contact-info {
     display: flex;
-    gap: 50px;
-    flex-wrap: wrap;
+    gap: 40px;
+    border-top: 1px solid #1a1a1a; /* Línea divisoria muy sutil */
+    padding-top: 25px;
 }
 
-.contact-item {
+.info-group {
     display: flex;
     flex-direction: column;
     gap: 5px;
 }
 
-.contact-item .label {
+.info-label {
     font-family: 'Syne', sans-serif;
-    font-size: 0.6rem;
+    font-size: 0.55rem;
     text-transform: uppercase;
     letter-spacing: 2px;
-    color: #444; /* Color muy apagado para que no distraiga */
+    color: #444; /* Gris oscuro */
 }
 
-.contact-item .value {
+.info-value {
     font-family: 'Space Grotesk', sans-serif;
-    font-size: 0.9rem;
-    color: #eee;
+    font-size: 0.85rem;
+    color: var(--text-main);
     text-decoration: none;
     transition: 0.3s;
 }
 
-.contact-item .value:hover {
-    color: var(--accent); /* Tu color neón o blanco */
+.info-value:hover {
+    color: var(--text-dim);
 }
 
-/* Responsive para celular */
+/* Ajuste para móvil: que todo se apile */
 @media (max-width: 768px) {
-    .action-buttons {
+    .bio-contact-info {
         flex-direction: column;
-    }
-    .btn-primary, .btn-secondary {
-        width: 100%;
-        text-align: center;
-    }
-    .quick-contact {
-        gap: 25px;
+        gap: 20px;
     }
 }
+
 /* 4. SECCIONES Y GRILLAS */
 .contenedor { padding: var(--spacing) 10%; max-width: 1400px; margin: 0 auto; }
 h2 { font-family: 'Manrope', sans-serif; font-size: 2.5rem; margin-bottom: 2.5rem; text-transform: uppercase; }
