@@ -67,13 +67,31 @@ a {
 }
 
 /* BOTÓN HERO - Sólido y elegante */
+/* BOTÓN HERO - Ajustado para logo imponente */
 .btn-hero {
-    display: inline-block; padding: 18px 50px; border: 1px solid #fff;
-    color: #fff; text-decoration: none; font-weight: 700; font-size: 0.7rem;
-    text-transform: uppercase; letter-spacing: 5px; transition: 0.5s;
+    display: inline-block; 
+    padding: 20px 60px; /* Un poco más de aire para que tenga más presencia */
+    border: 1px solid rgba(255, 255, 255, 0.4); /* Borde más sutil para que no compita con el logo */
+    color: #fff; 
+    text-decoration: none; 
+    font-family: 'Space Grotesk', sans-serif;
+    font-weight: 700; 
+    font-size: 0.75rem; /* Un pelo más de tamaño para legibilidad */
+    text-transform: uppercase; 
+    letter-spacing: 6px; /* Letras un poco más separadas para look de lujo */
+    transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
     background: transparent;
+    margin-top: 50px; /* Separación extra del logo para que la composición respire */
 }
-.btn-hero:hover { background: #fff; color: #000; box-shadow: 0 0 30px rgba(255,255,255,0.2); }
+
+.btn-hero:hover { 
+    background: #fff; 
+    color: #000; 
+    border-color: #fff;
+    letter-spacing: 8px; /* Efecto de expansión al pasar el mouse */
+    box-shadow: 0 0 40px rgba(255, 255, 255, 0.15); 
+    transform: translateY(-3px); /* Elevación sutil */
+}
 
 .hero-statement {
     font-family: 'Syne', sans-serif;
