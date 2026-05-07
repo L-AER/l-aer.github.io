@@ -39,10 +39,58 @@ nav {
     background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.9)), url('img/1.jpg') center/cover;
     text-align: center; overflow: hidden;
 }
-.hero-logo-container { margin: 20px 0 40px; display: flex; justify-content: center; }
-.hero-logo { 
-    width: 90%; max-width: 550px; height: auto; 
-    filter: drop-shadow(0 0 15px rgba(255,255,255,0.1));
+/* Contenedor del logo para la animación */
+.hero-logo-container {
+    position: relative;
+    display: inline-block;
+}
+
+.hero-logo {
+    position: relative;
+    z-index: 10;
+}
+
+/* El efecto Glitch */
+.hero-logo-container::before,
+.hero-logo-container::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('logo-laer.svg') no-repeat center/contain;
+    opacity: 0.5;
+    z-index: 5;
+}
+
+/* Capa roja del glitch */
+.hero-logo-container::before {
+    filter: drop-shadow(-2px 0 #ff00c1) color-burn; /* Color vibrante */
+    animation: glitch-anim-1 2s infinite linear alternate-reverse;
+}
+
+/* Capa azul/cian del glitch */
+.hero-logo-container::after {
+    filter: drop-shadow(2px 0 #00fff9) color-burn;
+    animation: glitch-anim-2 3s infinite linear alternate-reverse;
+}
+
+/* Animaciones de interferencia */
+@keyframes glitch-anim-1 {
+    0%, 100% { transform: translate(0); }
+    20% { transform: translate(-3px, 2px); }
+    40% { transform: translate(-3px, -2px); }
+    60% { transform: translate(3px, 2px); }
+    80% { transform: translate(3px, -2px); }
+}
+
+@keyframes glitch-anim-2 {
+    0%, 100% { transform: translate(0); }
+    15% { transform: translate(3px, -2px); }
+    35% { transform: translate(-3px, 2px); }
+    55% { transform: translate(3px, 2px); }
+    75% { transform: translate(-3px, -2px); }
 }
 .hero-tagline { text-transform: uppercase; letter-spacing: 5px; font-size: 0.9rem; color: var(--text-dim); }
 
