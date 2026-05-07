@@ -91,8 +91,17 @@ h2 { font-family: 'Manrope', sans-serif; font-size: 2.5rem; margin-bottom: 2.5re
 
 /* Ajustamos el contenedor para que no haya bordes raros */
 .spotify-item {
-    background: rgba(255, 255, 255, 0.02) !important;
-    border: 1px solid #1a1a1a !important;
+    padding: 10px; /* Reducimos el padding */
+    background: #000 !important; /* Fondo negro puro para que se funda con el reproductor */
+    display: flex;
+    flex-direction: column;
+}
+
+.spotify-item .track-info {
+    margin-bottom: 8px;
+    margin-left: 5px;
+    font-family: 'Space Grotesk', sans-serif; /* Usando la fuente nueva */
+    font-size: 0.6rem;
 }
 /* Forzar diseño de 2 columnas y fondo oscuro */
 .sounds-grid {
