@@ -119,6 +119,71 @@ h2 { font-family: 'Manrope', sans-serif; font-size: 2.5rem; margin-bottom: 2.5re
 .swiper-pagination-bullet { background: var(--accent) !important; }
 
 /* FOOTER */
-footer { padding: 60px 10%; text-align: center; border-top: 1px solid #111; }
-.link-footer a { color: var(--text-main); text-decoration: none; margin: 0 15px; font-weight: 700; font-size: 0.8rem; }
-.copyright { margin-top: 20px; font-size: 0.7rem; color: var(--text-dim); }
+footer {
+    padding: 60px 10% 40px;
+    background-color: #000;
+    border-top: 1px solid #111; /* Línea muy sutil */
+    font-family: 'Space Grotesk', sans-serif;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    max-width: 1400px;
+    margin: 0 auto;
+    flex-wrap: wrap;
+    gap: 40px;
+}
+
+.footer-column {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.footer-label {
+    text-transform: uppercase;
+    font-size: 0.65rem;
+    letter-spacing: 2px;
+    color: var(--text-dim);
+    font-weight: 700;
+}
+
+.footer-link, .footer-socials a {
+    color: var(--text-main);
+    text-decoration: none;
+    font-size: 0.9rem;
+    transition: 0.3s;
+}
+
+.footer-link:hover, .footer-socials a:hover {
+    color: var(--text-dim);
+    letter-spacing: 1px; /* Efecto sutil al pasar el mouse */
+}
+
+.footer-socials {
+    display: flex;
+    gap: 20px;
+}
+
+.footer-credits {
+    text-align: right;
+    font-size: 0.65rem;
+    color: #444; /* Muy discreto */
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* Ajuste para móvil */
+@media (max-width: 768px) {
+    .footer-content {
+        flex-direction: column;
+        text-align: center;
+        align-items: center;
+    }
+    .footer-credits {
+        text-align: center;
+        margin-top: 20px;
+    }
+}
