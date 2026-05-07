@@ -60,6 +60,16 @@ nav {
 }
 .btn-hero:hover { background: #fff; color: #000; box-shadow: 0 0 30px rgba(255,255,255,0.2); }
 
+.hero-statement {
+    font-family: 'Syne', sans-serif;
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: var(--accent);
+    margin-bottom: 20px;
+    line-height: 1.4;
+    letter-spacing: -0.5px; /* Un toque más moderno */
+}
+
 /* 4. SECCIONES Y GRILLAS (Fuerza 2 columnas) */
 .contenedor { padding: var(--spacing) 10%; max-width: 1400px; margin: 0 auto; }
 h2 { font-family: 'Syne', sans-serif; font-size: 2.5rem; margin-bottom: 2.5rem; text-transform: uppercase; }
