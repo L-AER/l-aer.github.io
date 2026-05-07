@@ -45,11 +45,37 @@ nav {
     filter: drop-shadow(0 0 15px rgba(255,255,255,0.1));
 }
 .hero-tagline { text-transform: uppercase; letter-spacing: 5px; font-size: 0.9rem; color: var(--text-dim); }
+
+/*BOTON ESCUCHA*/
 .btn-primary {
-    padding: 15px 40px; border: 1px solid var(--accent); color: var(--accent);
-    text-decoration: none; font-weight: 700; text-transform: uppercase; transition: 0.4s;
+    display: inline-block; /* Asegura que el padding funcione perfecto */
+    padding: 16px 45px; 
+    border: 1px solid rgba(255, 255, 255, 0.4); /* Borde sutil inicialmente */
+    color: var(--accent);
+    text-decoration: none; 
+    font-family: 'Space Grotesk', sans-serif; /* Usando la fuente técnica */
+    font-weight: 700; 
+    font-size: 0.75rem; /* Un poco más pequeño es más elegante */
+    text-transform: uppercase; 
+    letter-spacing: 4px; /* Espaciado generoso, muy de marca de lujo */
+    position: relative;
+    overflow: hidden;
+    transition: all 0.5s cubic-bezier(0.2, 1, 0.3, 1); /* Transición suave tipo seda */
+    backdrop-filter: blur(5px); /* Si hay algo de fondo, se verá increíble */
 }
-.btn-primary:hover { background: var(--accent); color: var(--bg-dark); }
+
+.btn-primary:hover {
+    background: var(--accent);
+    color: var(--bg-dark);
+    border-color: var(--accent);
+    letter-spacing: 6px; /* Las letras se expanden sutilmente al entrar */
+    box-shadow: 0 0 25px rgba(255, 255, 255, 0.2); /* Brillo externo suave */
+    transform: translateY(-2px); /* Pequeña elevación */
+}
+
+.btn-primary:active {
+    transform: translateY(0); /* Efecto de click */
+}
 
 /* 4. SECCIONES Y GRILLAS */
 .contenedor { padding: var(--spacing) 10%; max-width: 1400px; margin: 0 auto; }
