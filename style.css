@@ -85,7 +85,90 @@ nav {
 .btn-primary:active {
     transform: translateY(0); /* Efecto de click */
 }
+/* Contenedor principal */
+.bio-footer {
+    margin-top: 50px;
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    border-top: 1px solid #111;
+    padding-top: 30px;
+}
 
+/* Fila de botones */
+.action-buttons {
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+/* El botón secundario (Ghost) */
+.btn-secondary {
+    display: inline-block;
+    padding: 16px 35px;
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    color: #888;
+    text-decoration: none;
+    font-family: 'Space Grotesk', sans-serif;
+    font-weight: 700;
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    transition: all 0.4s ease;
+}
+
+.btn-secondary:hover {
+    border-color: #fff;
+    color: #fff;
+    background: rgba(255, 255, 255, 0.05);
+}
+
+/* Bloque de contacto tipo "Ficha" */
+.quick-contact {
+    display: flex;
+    gap: 50px;
+    flex-wrap: wrap;
+}
+
+.contact-item {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.contact-item .label {
+    font-family: 'Syne', sans-serif;
+    font-size: 0.6rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: #444; /* Color muy apagado para que no distraiga */
+}
+
+.contact-item .value {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 0.9rem;
+    color: #eee;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.contact-item .value:hover {
+    color: var(--accent); /* Tu color neón o blanco */
+}
+
+/* Responsive para celular */
+@media (max-width: 768px) {
+    .action-buttons {
+        flex-direction: column;
+    }
+    .btn-primary, .btn-secondary {
+        width: 100%;
+        text-align: center;
+    }
+    .quick-contact {
+        gap: 25px;
+    }
+}
 /* 4. SECCIONES Y GRILLAS */
 .contenedor { padding: var(--spacing) 10%; max-width: 1400px; margin: 0 auto; }
 h2 { font-family: 'Manrope', sans-serif; font-size: 2.5rem; margin-bottom: 2.5rem; text-transform: uppercase; }
