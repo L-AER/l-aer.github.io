@@ -94,6 +94,28 @@ h2 { font-family: 'Syne', sans-serif; font-size: 2.5rem; margin-bottom: 2.5rem; 
     margin-top: 20px;
 }
 
+.music-container iframe {
+    /* Eliminamos el invert(1) definitivamente */
+    filter: brightness(0.9) contrast(1.2) saturate(1.2);
+    opacity: 0.9;
+    transition: 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+    border-radius: 4px;
+}
+
+.soundcloud-card:hover .music-container iframe {
+    filter: brightness(1.1) contrast(1.3) saturate(1.5); /* El verde brat brilla más al pasar el mouse */
+    opacity: 1;
+}
+
+/* Para que los textos de arriba no se pierdan */
+.track-info {
+    color: var(--text-dim);
+    font-size: 0.6rem;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin-bottom: 8px;
+}
+
 /* 5. BIO - SIMETRÍA LATERAL */
 .about-grid {
     display: grid;
