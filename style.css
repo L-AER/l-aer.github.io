@@ -55,10 +55,12 @@ a {
 }
 .hero-logo-container { margin-bottom: 30px; }
 .hero-logo { 
-    width: 90%; 
-    max-width: 850px; 
+    width: 95%; /* Que ocupe casi todo el ancho en móviles */
+    max-width: 800px; /* Aumentamos de los ~600px que tenías a 800px */
     height: auto;
-    animation: flicker 4s infinite; }
+    animation: flicker 4s infinite;
+    filter: drop-shadow(0 0 15px rgba(255,255,255,0.05)); /* Un brillo casi imperceptible */
+}
 @keyframes flicker {
     0%, 18%, 22%, 25%, 53%, 57%, 100% { opacity: 1; }
     20%, 24%, 55% { opacity: 0.7; }
