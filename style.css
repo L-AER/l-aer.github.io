@@ -53,7 +53,15 @@ a {
     background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.8)), url('img/1.jpg') center/cover;
     text-align: center;
 }
-.hero-logo-container { margin-bottom: 30px; }
+.hero-logo-container { 
+    width: 100%;
+    max-width: 1000px; /* Le damos permiso de ser gigante */
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0 20px;
+}
 .hero-logo { 
     width: 95%; /* Que ocupe casi todo el ancho en móviles */
     max-width: 800px; /* Aumentamos de los ~600px que tenías a 800px */
