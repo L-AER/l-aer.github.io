@@ -6,7 +6,7 @@
     --accent: #ffffff;
     --text-main: #f5f5f5;
     --text-dim: #666666;
-    --spacing: 100px;
+    --spacing: 120px;
     --card-bg: rgba(255, 255, 255, 0.02);
 }
 
@@ -32,6 +32,7 @@ nav {
     font-family: 'Syne', sans-serif; color: var(--text-main); text-decoration: none; margin-left: 30px;
     font-size: 0.7rem; font-weight: 700; text-transform: uppercase; transition: 0.3s;
 }
+.nav-links a:hover { color: var(--text-dim); }
 
 /* 3. HERO */
 #hero {
@@ -39,89 +40,94 @@ nav {
     background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.8)), url('img/1.jpg') center/cover;
     text-align: center;
 }
+.hero-logo-container { margin-bottom: 30px; }
 .hero-logo { width: 80%; max-width: 600px; animation: flicker 4s infinite; }
 @keyframes flicker {
     0%, 18%, 22%, 25%, 53%, 57%, 100% { opacity: 1; }
     20%, 24%, 55% { opacity: 0.7; }
 }
 
-/* BOTON HERO - Estilo Sólido para que no se pierda */
-.btn-primary {
-    display: inline-block; padding: 16px 45px; border: 1px solid #fff;
+/* BOTÓN HERO - Sólido y elegante */
+.btn-hero {
+    display: inline-block; padding: 18px 50px; border: 1px solid #fff;
     color: #fff; text-decoration: none; font-weight: 700; font-size: 0.7rem;
-    text-transform: uppercase; letter-spacing: 4px; transition: 0.4s;
-    margin-top: 20px;
+    text-transform: uppercase; letter-spacing: 5px; transition: 0.5s;
+    background: transparent;
 }
-.btn-primary:hover { background: #fff; color: #000; }
+.btn-hero:hover { background: #fff; color: #000; box-shadow: 0 0 30px rgba(255,255,255,0.2); }
 
-/* 4. SECCIONES GENERALES (Fuerza 2 columnas) */
+/* 4. SECCIONES Y GRILLAS (Fuerza 2 columnas) */
 .contenedor { padding: var(--spacing) 10%; max-width: 1400px; margin: 0 auto; }
 h2 { font-family: 'Syne', sans-serif; font-size: 2.5rem; margin-bottom: 2.5rem; text-transform: uppercase; }
 
 .spotify-grid, .sounds-grid, .video-grid {
     display: grid !important;
-    grid-template-columns: repeat(2, 1fr) !important; /* FORZAR 2 COLUMNAS EN PC */
+    grid-template-columns: repeat(2, 1fr) !important;
     gap: 30px;
+    margin-top: 20px;
 }
 
 /* 5. BIO - SIMETRÍA LATERAL */
 .about-grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 60px;
-    align-items: stretch;
+    gap: 80px;
+    align-items: stretch; /* Mantiene misma altura en ambas columnas */
 }
 .about-content {
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    justify-content: space-between; /* Empuja el footer interno a la base */
 }
 .about-image img {
     width: 100%; height: 100%; object-fit: cover;
-    filter: grayscale(100%); border-radius: 4px;
+    filter: grayscale(100%) contrast(1.1); border-radius: 4px;
 }
 
-/* BOTONES BIO (TÉCNICOS) */
-.bio-footer-internal { margin-top: 40px; display: flex; flex-direction: column; gap: 25px; }
-.bio-actions { display: flex; gap: 20px; }
+/* BOTONES TÉCNICOS BIO (Discretos con guion) */
+.bio-footer-internal { margin-top: 40px; display: flex; flex-direction: column; gap: 30px; }
+.bio-actions { display: flex; gap: 30px; }
 
 .btn-rider, .btn-assets {
-    text-decoration: none; font-size: 0.65rem; color: var(--text-dim);
-    text-transform: uppercase; letter-spacing: 2px; display: flex; align-items: center; gap: 10px;
-    transition: 0.3s;
+    text-decoration: none !important; font-size: 0.65rem; color: var(--text-dim) !important;
+    text-transform: uppercase; letter-spacing: 2px; display: flex; align-items: center; gap: 12px;
+    transition: 0.3s; font-family: 'Space Grotesk', sans-serif;
 }
-.btn-rider::before, .btn-assets::before { content: ""; width: 15px; height: 1px; background: #333; }
-.btn-rider:hover, .btn-assets:hover { color: #fff; }
+.btn-rider::before, .btn-assets::before { content: ""; width: 20px; height: 1px; background: #333; transition: 0.3s; }
+.btn-rider:hover, .btn-assets:hover { color: #fff !important; }
+.btn-rider:hover::before, .btn-assets:hover::before { width: 30px; background: #fff; }
 
-.bio-contact-info { display: flex; gap: 40px; border-top: 1px solid #1a1a1a; padding-top: 20px; }
-.info-label { font-size: 0.5rem; color: #444; text-transform: uppercase; letter-spacing: 2px; }
-.info-value { font-size: 0.8rem; color: #eee; text-decoration: none; }
+.bio-contact-info { display: flex; gap: 50px; border-top: 1px solid #1a1a1a; padding-top: 25px; }
+.info-label { font-family: 'Syne', sans-serif; font-size: 0.5rem; color: #444; text-transform: uppercase; letter-spacing: 2px; }
+.info-value { font-size: 0.85rem; color: #eee; text-decoration: none; }
 
-/* 6. CARDS Y MEDIA */
-.media-card { background: var(--card-bg); padding: 20px; border: 1px solid #1a1a1a; border-radius: 4px; }
+/* 6. MEDIA CARDS */
+.media-card { background: var(--card-bg); padding: 20px; border: 1px solid #1a1a1a; border-radius: 4px; transition: 0.3s; }
+.media-card:hover { border-color: #333; }
 .track-info { font-size: 0.6rem; color: var(--text-dim); text-transform: uppercase; letter-spacing: 2px; margin-bottom: 10px; }
 
-.spotify-item iframe { filter: grayscale(100%); transition: 0.5s; }
-.spotify-item:hover iframe { filter: grayscale(0%); }
+.spotify-item iframe { filter: grayscale(100%) opacity(0.7); transition: 0.5s; }
+.spotify-item:hover iframe { filter: grayscale(0%) opacity(1); }
 
 .music-container iframe { filter: invert(1); opacity: 0.8; }
-.video-container { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; }
+.video-container { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; border-radius: 4px; }
 .video-container iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }
 
 /* 7. SWIPERS */
-.swiper { width: 100%; margin-top: 20px; }
-.swiper-slide img { width: 100%; border-radius: 4px; }
+.swiper { width: 100%; padding-bottom: 50px; }
+.swiper-slide img { width: 100%; border-radius: 4px; object-fit: cover; }
+.swiper-pagination-bullet { background: #fff !important; }
 
 /* 8. FOOTER */
-footer { padding: 60px 10%; border-top: 1px solid #111; }
-.footer-content { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 30px; }
+footer { padding: 80px 10% 40px; border-top: 1px solid #111; }
+.footer-content { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 40px; }
 .footer-socials { display: flex; gap: 20px; }
-.footer-socials a { color: #fff; text-decoration: none; font-size: 0.8rem; text-transform: uppercase; }
+.footer-socials a { color: #fff; text-decoration: none; font-size: 0.8rem; text-transform: uppercase; transition: 0.3s; }
+.footer-socials a:hover { color: var(--text-dim); }
 
 /* RESPONSIVE */
 @media (max-width: 992px) {
-    .about-grid, .spotify-grid, .sounds-grid, .video-grid {
-        grid-template-columns: 1fr !important;
-    }
+    .about-grid, .spotify-grid, .sounds-grid, .video-grid { grid-template-columns: 1fr !important; }
     .about-content { gap: 40px; }
+    .hero-logo { width: 95%; }
 }
