@@ -178,6 +178,66 @@ h2 { font-family: 'Manrope', sans-serif; font-size: 2.5rem; margin-bottom: 2.5re
 .swiper-slide img { width: 100%; height: 100%; object-fit: cover; }
 .swiper-pagination-bullet { background: var(--accent) !important; }
 
+.marquee-container {
+    width: 100%;
+    overflow: hidden;
+    padding: 40px 0;
+    background: #000;
+}
+
+.marquee-content {
+    display: flex;
+    gap: 20px;
+    animation: scroll 30s linear infinite;
+}
+
+.marquee-content img {
+    height: 350px; /* Altura uniforme para todos los flyers */
+    width: auto;
+    filter: grayscale(100%) contrast(1.1);
+    transition: 0.5s;
+    border: 1px solid #111;
+}
+
+.marquee-content img:hover {
+    filter: grayscale(0%);
+    transform: scale(1.05);
+    z-index: 10;
+}
+
+@keyframes scroll {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); } /* Mueve la mitad de la cinta */
+}
+
+/* Ajustes específicos para los afiches */
+.gigSwiper {
+    width: 100%;
+    padding-top: 50px;
+    padding-bottom: 50px;
+}
+
+.gigSwiper .swiper-slide {
+    background-position: center;
+    background-size: cover;
+    width: 300px; /* Ancho del afiche */
+    height: 420px; /* Alto proporcional a un flyer */
+    filter: grayscale(100%);
+    transition: 0.5s;
+}
+
+.gigSwiper .swiper-slide-active {
+    filter: grayscale(0%); /* Solo el que está al centro tiene color */
+    box-shadow: 0 0 30px rgba(255, 255, 255, 0.1);
+}
+
+.gigSwiper img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 4px;
+}
+
 /* FOOTER */
 footer {
     padding: 60px 10% 40px;
