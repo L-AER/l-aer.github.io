@@ -10,6 +10,57 @@
     --card-bg: rgba(255, 255, 255, 0.02);
 }
 
+/* AJUSTES PARA MÓVILES (Responsive) */
+@media (max-width: 768px) {
+    /* 1. Espaciado general más compacto */
+    :root {
+        --spacing: 40px; 
+    }
+
+    .contenedor {
+        padding: var(--spacing) 5%; /* Menos margen lateral en móvil */
+    }
+
+    /* 2. El Logo en Hero: que no se vea minúsculo ni gigante */
+    .hero-logo {
+        width: 85vw !important;
+        max-width: 320px !important; /* Evita que crezca demasiado en pantallas pequeñas */
+    }
+
+    /* 3. La Bio: pasar de 2 columnas a 1 columna */
+    .about-grid {
+        grid-template-columns: 1fr !important; /* Una sola columna */
+        gap: 30px;
+    }
+
+    .about-image {
+        order: -1; /* Ponemos la foto arriba del texto en móviles */
+        height: 350px;
+    }
+
+    /* 4. Botones de la Bio: que no se corten */
+    .bio-actions {
+        flex-direction: column; /* Un botón sobre otro */
+        gap: 15px;
+    }
+
+    .bio-contact-info {
+        flex-direction: column; /* Email sobre Localización */
+        gap: 20px;
+    }
+
+    /* 5. Grillas de Música: forzar 1 columna para que el reproductor no se aplaste */
+    .spotify-grid, .sounds-grid, .video-grid {
+        grid-template-columns: 1fr !important; 
+        gap: 20px;
+    }
+
+    /* 6. Títulos */
+    h2 {
+        font-size: 1.8rem; /* Texto un poco más pequeño para que no se rompa */
+    }
+}
+
 * { margin: 0; padding: 0; box-sizing: border-box; }
 html { scroll-behavior: smooth; }
 body { 
