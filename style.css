@@ -308,6 +308,41 @@ h2 { font-family: 'Syne', sans-serif; font-size: 2.5rem; margin-bottom: 2.5rem; 
     border-radius: 2px;
 }
 
+.booking-container {
+    display: flex;
+    justify-content: center; /* Centra el botón */
+    margin: 40px 0;
+}
+
+.booking-button {
+    display: inline-block;
+    padding: 15px 40px;
+    background-color: transparent; /* Fondo transparente para el look minimal */
+    color: #ffffff; /* Texto blanco */
+    border: 1px solid #ffffff; /* Borde delgado blanco */
+    font-family: 'Inter', sans-serif; /* O la fuente que uses en tu logo */
+    font-size: 14px;
+    font-weight: 600;
+    letter-spacing: 2px; /* Espaciado pro entre letras */
+    text-decoration: none;
+    text-transform: uppercase;
+    transition: all 0.3s ease; /* Hace que el efecto sea fluido */
+    cursor: pointer;
+}
+
+/* El efecto cuando pasas el mouse por encima */
+.booking-button:hover {
+    background-color: #ffffff; /* El fondo se vuelve blanco */
+    color: #000000; /* El texto se vuelve negro */
+    transform: translateY(-3px); /* Pequeño salto hacia arriba */
+    box-shadow: 0 10px 20px rgba(255, 255, 255, 0.1); /* Brillo sutil */
+}
+
+/* Efecto cuando lo presionas */
+.booking-button:active {
+    transform: translateY(-1px);
+}
+
 /* 8. FOOTER */
 footer { padding: 80px 10% 40px; border-top: 1px solid #111; }
 .footer-content { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 40px; }
