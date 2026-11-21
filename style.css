@@ -1,4 +1,6 @@
-/* 1. CONFIGURACIÓN Y FUENTES */
+/* ==========================================================================
+   1. CONFIGURACIÓN, VARIABLES Y FUENTES
+   ========================================================================== */
 @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;600;700&family=Space+Mono:ital,wght@0,400;1,400&family=Syne:wght@700;800&display=swap');
 
 :root {
@@ -57,7 +59,9 @@ h2 {
     padding: var(--spacing-y) 10%;
 }
 
-/* 2. NAVEGACIÓN */
+/* ==========================================================================
+   2. NAVEGACIÓN
+   ========================================================================== */
 nav {
     position: fixed;
     top: 0;
@@ -100,7 +104,9 @@ nav {
     color: var(--text-dim);
 }
 
-/* 3. HERO */
+/* ==========================================================================
+   3. HERO Y MARQUEE DE GÉNEROS
+   ========================================================================== */
 #hero {
     min-height: 100vh;
     display: flex;
@@ -174,7 +180,6 @@ nav {
     transform: translateY(-2px);
 }
 
-/* MARQUEE DE GÉNEROS */
 .genre-marquee {
     width: 100%;
     overflow: hidden;
@@ -205,7 +210,9 @@ nav {
     to { transform: translateX(-50%); }
 }
 
-/* 4. BIO (THE STORY) */
+/* ==========================================================================
+   4. BIOGRAFÍA (THE STORY)
+   ========================================================================== */
 .about-grid {
     display: grid;
     grid-template-columns: 1.15fr 0.85fr;
@@ -259,6 +266,7 @@ nav {
     filter: grayscale(100%) contrast(1.1);
     border-radius: 4px;
     display: block;
+}
 
 /* BOTONES Y DATOS INTERNOS DE BIO */
 .bio-footer-internal {
@@ -339,7 +347,9 @@ a.info-value:hover {
     color: var(--text-dim);
 }
 
-/* 5. SECCIÓN ÁLBUM (DISCRETA Y COMPACTA) */
+/* ==========================================================================
+   5. SECCIÓN ÁLBUM (SOUL, MIND & BODY)
+   ========================================================================== */
 .album-section {
     max-width: 920px;
     margin: 0 auto;
@@ -462,7 +472,9 @@ a.info-value:hover {
     background-color: rgba(255, 255, 255, 0.04);
 }
 
-/* 6. GRILLAS DE MÚSICA Y MEDIA CARDS */
+/* ==========================================================================
+   6. GRILLAS DE MÚSICA Y MEDIA CARDS
+   ========================================================================== */
 .spotify-grid,
 .sounds-grid,
 .video-grid {
@@ -531,7 +543,9 @@ a.info-value:hover {
     height: 100%;
 }
 
-/* 7. SWIPERS & BOOKING */
+/* ==========================================================================
+   7. SWIPERS (GALERÍA Y PAST GIGS) & BOOKING
+   ========================================================================== */
 .swiper {
     width: 100%;
     padding-bottom: 48px;
@@ -602,169 +616,4 @@ a.info-value:hover {
 }
 
 .booking-button:hover {
-    background-color: var(--accent);
-    color: #000000;
-    transform: translateY(-2px);
-    box-shadow: 0 10px 24px rgba(255, 255, 255, 0.12);
-}
-
-.booking-button:active {
-    transform: translateY(0);
-}
-
-/* 8. FOOTER */
-footer {
-    padding: 72px 10% 40px;
-    border-top: 1px solid var(--surface);
-}
-
-.footer-content {
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
-    flex-wrap: wrap;
-    gap: 36px;
-}
-
-.footer-label {
-    display: block;
-    font-family: 'Syne', sans-serif;
-    font-size: 0.6rem;
-    color: var(--text-dim);
-    text-transform: uppercase;
-    letter-spacing: 2px;
-    margin-bottom: 8px;
-}
-
-.footer-link {
-    font-size: 0.9rem;
-    color: var(--text-main);
-    transition: color 0.25s ease;
-}
-
-.footer-link:hover {
-    color: var(--text-dim);
-}
-
-.footer-socials {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 20px;
-}
-
-.footer-socials a {
-    color: var(--accent);
-    font-size: 0.78rem;
-    letter-spacing: 1px;
-    text-transform: uppercase;
-    transition: color 0.25s ease;
-}
-
-.footer-socials a:hover {
-    color: var(--text-dim);
-}
-
-.footer-credits p {
-    font-size: 0.75rem;
-    color: var(--text-dim);
-}
-
-/* 9. RESPONSIVE */
-@media (max-width: 992px) {
-    .contenedor {
-        padding: var(--spacing-y) 6%;
-    }
-
-    .about-grid {
-        grid-template-columns: 1fr;
-        gap: 40px;
-    }
-
-    .spotify-grid,
-    .sounds-grid,
-    .video-grid {
-        grid-template-columns: 1fr;
-    }
-}
-
-@media (max-width: 900px) {
-    .album-grid {
-        grid-template-columns: 1fr;
-        gap: 1.5rem;
-    }
-
-    .album-cover {
-        max-width: 280px;
-    }
-}
-
-@media (max-width: 768px) {
-    :root {
-        --spacing-y: 40px;
-    }
-
-    nav {
-        padding: 18px 5%;
-    }
-
-    .nav-links {
-        gap: 16px;
-    }
-
-    .nav-links a {
-        font-size: 0.62rem;
-        letter-spacing: 1px;
-    }
-
-    .about-image {
-        order: -1;
-    }
-
-    .about-image img {
-        max-height: 360px;
-    }
-
-    .bio-actions {
-        flex-direction: column;
-        gap: 14px;
-    }
-
-    .bio-contact-info {
-        flex-direction: column;
-        gap: 18px;
-    }
-
-    .hero-logo {
-        width: 85vw;
-        max-width: 320px;
-    }
-
-    .btn-hero {
-        padding: 15px 36px;
-        letter-spacing: 4px;
-        margin-top: 32px;
-    }
-}
-
-@media (max-width: 600px) {
-    .album-section {
-        padding: 2rem 1rem;
-    }
-
-    .tracklist li {
-        font-size: 0.76rem;
-        gap: 0.5rem;
-    }
-
-    .feat {
-        display: block;
-        margin-left: 0;
-        margin-top: 0.08rem;
-    }
-
-    .album-links a {
-        flex: 1 1 auto;
-        text-align: center;
-        padding: 0.55rem 0.75rem;
-    }
-}
+    background-color: var(--
