@@ -242,6 +242,65 @@ h2 { font-family: 'Syne', sans-serif; font-size: 2.5rem; margin-bottom: 2.5rem; 
     filter: grayscale(100%) contrast(1.1); border-radius: 4px;
 }
 
+.album-section {
+  padding: 5rem 1.5rem;
+  max-width: 1100px;
+  margin: 0 auto;
+  color: #E1E4E6;
+}
+
+.album-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
+  gap: 2.5rem;
+  align-items: center;
+}
+
+.album-cover img {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  border: 1px solid #2A2E37;
+  display: block;
+}
+
+.album-tag {
+  font-family: monospace;
+  font-size: 0.85rem;
+  color: #2FD3EC;
+  display: block;
+  margin-bottom: 0.5rem;
+}
+
+.tracklist {
+  list-style: none;
+  padding: 0;
+  margin: 1.5rem 0;
+  border-top: 1px solid #1E222B;
+}
+
+.tracklist li {
+  display: flex;
+  justify-content: space-between;
+  padding: 0.6rem 0;
+  border-bottom: 1px solid #1E222B;
+  font-size: 0.95rem;
+}
+
+.album-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+
+.album-links a {
+  padding: 0.6rem 1rem;
+  border: 1px solid #2A2E37;
+  color: #FFFFFF;
+  text-decoration: none;
+  font-size: 0.9rem;
+}
+
 /* BOTONES TÉCNICOS BIO (Discretos con guion) */
 .bio-footer-internal { margin-top: 40px; display: flex; flex-direction: column; gap: 30px; }
 .bio-actions { display: flex; gap: 30px; }
