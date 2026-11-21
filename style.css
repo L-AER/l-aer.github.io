@@ -301,6 +301,14 @@ h2 { font-family: 'Syne', sans-serif; font-size: 2.5rem; margin-bottom: 2.5rem; 
   font-size: 0.9rem;
 }
 
+.feat {
+  font-family: 'Space Mono', monospace;
+  font-style: italic;
+  font-size: 0.85em;
+  opacity: 0.8;
+  letter-spacing: 0.02em;
+}
+
 /* BOTONES TÉCNICOS BIO (Discretos con guion) */
 .bio-footer-internal { margin-top: 40px; display: flex; flex-direction: column; gap: 30px; }
 .bio-actions { display: flex; gap: 30px; }
