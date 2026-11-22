@@ -210,6 +210,28 @@ nav {
     to { transform: translateX(-50%); }
 }
 
+.hero-socials {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 22px;
+    margin-top: 24px;
+}
+
+.hero-socials a {
+    color: rgba(255, 255, 255, 0.65);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 4px;
+    transition: color 0.25s ease, transform 0.25s ease;
+}
+
+.hero-socials a:hover {
+    color: var(--accent-cyan);
+    transform: translateY(-2px);
+}
+
 /* ==========================================================================
    4. BIOGRAFÍA (THE STORY)
    ========================================================================== */
